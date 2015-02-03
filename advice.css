@@ -23,6 +23,7 @@ body {
 	float: left;
 	width: 80%;
 	height: 100%;
+	overflow: hidden;
 }
 
 
@@ -31,7 +32,9 @@ body {
 
 
 
-
+strong {
+	font-weight: bold;
+}
 
 h1 {
 	margin-top: 15%;
@@ -42,17 +45,36 @@ h1 {
 }
 
 h3 {
+	position: relative;
 	margin-top: 1%;
 
 	font-size: 2em;
 	color: hsla(200, 40%, 30%, 0.9);
-	text-align: center;
+	
 	text-shadow: 1px 1px 0 #000;
+
+	-webkit-animation-duration: 15s;
+
+	-webkit-animation-timing-function: linear;
+
+  -webkit-animation-name: marquee;
+
+  -webkit-animation-iteration-count: infinite;
+  /* add moz prefixed ones too*/
 }
 
-strong {
-	font-weight: bold;
+@-webkit-keyframes marquee {
+	  from {
+	  	left: 100%;
+	  }
+	  to {
+	  	left: -70%;
+	  }
 }
+
+
+
+
 
 
 button {
@@ -61,21 +83,45 @@ button {
 	width: 30%;
 	height: 5%;
 
-  border: 1px solid black;
+  border: 3px solid black;
   border-radius: 5%/50%;
   box-shadow: 2px 2px 5px black;
 
 	font-size: 1.6em;
-	transition: transform 20s ease-in-out;
 }
 
 button:hover {
-	border: 3px solid black;
-	transform: rotate(180deg);
+	-webkit-animation-duration: 0.5s;
+
+	-webkit-animation-timing-function: linear;
+
+  -webkit-animation-name: wobble;
+
+  -webkit-animation-iteration-count: infinite;
 }
 
+@-webkit-keyframes wobble{
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(2deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(-2deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+
+}
+
+
 button:active {
-	background: #CCC;
+	background: #333;
 	color: #222;
   font-size: 1.55em;
   box-shadow: 1px 1px 2px black;
@@ -83,12 +129,16 @@ button:active {
 
 
 
+
 #advice {
   text-align: center;
+  width: 60%;
   margin: 10% auto;
-  font-size: 2em;
+  font-size: 3em;
   font-family: monospace;
+  font-weight: bold;
   
-  text-shadow: 15px 15px 1px darkgray, -15px -15px 1px darkgray, 0px 0px 20px hsla(200, 40%, 30%, 0.9);
+  text-shadow:  2px 2px 0px hsl(200, 50%, 30%), -2px -2px 0px hsl(200, 50%, 30%), -2px 2px 0px hsl(200, 50%, 30%), 2px -2px 0px hsl(200, 50%, 30%), 
+                8px 8px 0 #888, -8px -8px 0 #888;
 }
 
