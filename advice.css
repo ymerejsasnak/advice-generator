@@ -22,7 +22,8 @@ body {
 	overflow: hidden;
 	box-sizing: border-box;
 	border: 4px solid black;	
-	background: linear-gradient(hsla(200, 0%, 50%, 0.5), hsla(200, 0%, 90%, 0.5));
+	border-radius: 5%/6%;
+	background: linear-gradient(hsla(200, 0%, 70%, 0.6), hsla(200, 0%, 90%, 0.5));
 }
 
 
@@ -36,7 +37,7 @@ strong {
 }
 
 h1 {
-	margin-top: 12%;
+	margin-top: 8%;
 
 	font-size: 4em;
 	text-align: center;
@@ -44,30 +45,33 @@ h1 {
 }
 
 h3 {
-	position: relative;
+	height: 1.5em;
 	margin-top: 1%;
 
-	font-size: 2em;
+  text-align: center;
+	font-size: 1em;
 	color: hsla(200, 40%, 30%, 0.9);
 	
 	text-shadow: 1px 1px 0 #000;
 
-	-webkit-animation-duration: 25s;
+	-webkit-animation-duration: 1.5s;
 
-	-webkit-animation-timing-function: linear;
+	-webkit-animation-timing-function: ease-in-out;
 
-  -webkit-animation-name: marquee;
+  -webkit-animation-name: flash;
 
   -webkit-animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
   /* add moz prefixed ones too*/
 }
 
-@-webkit-keyframes marquee {
+@-webkit-keyframes flash {
 	  from {
-	  	left: 100%;
+	  	opacity: 0;
 	  }
 	  to {
-	  	left: -70%;
+	  	opacity: 1;
 	  }
 }
 
@@ -78,13 +82,14 @@ h3 {
 
 button {
 	display: block;
-	margin: 5% auto;
+	margin: 4% auto 1%;
 	width: 30%;
-	height: 5%;
+	height: 6%;
 
   border: 3px solid black;
   border-radius: 5%/50%;
   box-shadow: 2px 2px 5px black;
+  background: rgba(255, 255, 255, 0.4);
 
 	font-size: 1.6em;
 }
@@ -120,9 +125,10 @@ button:hover {
 
 
 button:active {
-	background: #333;
+	
 	color: #222;
   font-size: 1.55em;
+  width: 29%;
   box-shadow: 1px 1px 2px black;
 }
 
@@ -131,7 +137,7 @@ button:active {
 
 #advice {
   text-align: center;
-  width: 60%;
+  width: 70%;
   margin: 10% auto;
   font-size: 3em;
   font-family: monospace;
