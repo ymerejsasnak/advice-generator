@@ -1,0 +1,94 @@
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	background: linear-gradient(#DDD, #AAA);
+}
+
+*:focus {
+    outline: 0;
+}
+
+
+.margin {
+	float:left;
+	width: 10%;
+	height: 100%;
+	background: linear-gradient(#222, #555);
+}
+
+#center {
+	float: left;
+	width: 80%;
+	height: 100%;
+}
+
+
+
+
+
+
+
+
+
+h1 {
+	margin-top: 15%;
+
+	font-size: 4em;
+	text-align: center;
+	text-shadow: 1px 1px 5px black, 0 0 50px hsla(200, 40%, 30%, 0.9);
+}
+
+h3 {
+	margin-top: 1%;
+
+	font-size: 2em;
+	color: hsla(200, 40%, 30%, 0.9);
+	text-align: center;
+	text-shadow: 1px 1px 0 #000;
+}
+
+strong {
+	font-weight: bold;
+}
+
+
+button {
+	display: block;
+	margin: 5% auto;
+	width: 30%;
+	height: 5%;
+
+  border: 1px solid black;
+  border-radius: 5%/50%;
+  box-shadow: 2px 2px 5px black;
+
+	font-size: 1.6em;
+	transition: transform 20s ease-in-out;
+}
+
+button:hover {
+	border: 3px solid black;
+	transform: rotate(180deg);
+}
+
+button:active {
+	background: #CCC;
+	color: #222;
+  font-size: 1.55em;
+  box-shadow: 1px 1px 2px black;
+}
+
+
+
+#advice {
+  text-align: center;
+  margin: 10% auto;
+  font-size: 2em;
+  font-family: monospace;
+  
+  text-shadow: 15px 15px 1px darkgray, -15px -15px 1px darkgray, 0px 0px 20px hsla(200, 40%, 30%, 0.9);
+}
+
