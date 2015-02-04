@@ -1,28 +1,29 @@
 (function() {
 
-	var output = document.getElementById("advice");
-	var button = document.getElementById("generate");
+  var output = document.getElementById("advice");
+  var button = document.getElementById("generate");
   
   var getAdvice = advice();
 
 
 
-	button.addEventListener("click", function() {
-		if (output.firstChild) output.removeChild(output.firstChild);
-    output.appendChild(document.createTextNode( getAdvice() ) );
-	});
+  button.addEventListener("click", function() {
+	  if (output.firstChild) output.removeChild(output.firstChild);
+      output.appendChild(document.createTextNode( getAdvice() ) );
+  });
 
 
 
   
   function advice() {
     
+    var index = -1;
     var text =  [
                 "COUNT YOUR CHICKENS WITH A HATCHET",
                 "HUG A STRANGER",
                 "DRIVE INTO A TREE",
                 "READ AN UNPOPULAR BOOK",
-                "KISS A RACCOON",
+                "KISS A CONVICT (AND DON'T BE SHY WITH THAT TONGUE!)",
                 "ORDER A SHEET PIZZA AND DON'T SHARE IT WITH ANYONE",
                 "RUN NAKED DOWN THE ROAD SCREAMING \"I LOVE YOU ABRAHAM LINCOLN!\"",
                 "TELL YOUR EMPLOYER WHAT YOU REALLY THINK ABOUT HIM/HER",
@@ -42,26 +43,38 @@
                 "GO TO WAL-MART AND SLAM AN EMPTY CART REPEATEDLY INTO THE WALL WHILE CRYING OUT \"VIVA LA REVOLUTION!\"",
                 "TAKE A SHIT ON YOUR SPOUSE'S PET THEN BLAME THE KIDS",
                 "DUMPSTER DIVE FOR FUN AND PROFIT",
-                "BOYCOTT EVERYTHING",
+                "BOYCOTT LIFE",
                 "TODAY, TELL EVERYONE YOU SEE NOTHING BUT THE DEEP DARK TRUTH",
                 "SEND EVERYONE YOU KNOW LETTERS ENUMERATING THEIR CHARACTER FAULTS",
                 "HAVE A DEEP PHILOSOPHICAL CONVERSATION WITH THE CASHIER AT YOUR LOCAL SUPERMARKET",
-                "CALL JOEY AND TELL HIM TO GET OVER HERE AND MOW THE DAMN LAWN!"
+                "CALL JOEY AND TELL HIM TO GET OVER HERE AND MOW THE DAMN LAWN!",
+                "EMPTY YOUR ACCOUNTS, BURN ALL YOUR MONEY, AND BEGIN USING HOMEMADE CHEESE AS CURRENCY"
 
                 ];
 
-    var lastPick;
-
+    text = shuffle(text); 
+           
     return function() {
-    	do {
-  	    var pick = Math.floor(Math.random() * text.length);
-  	  } while (pick === lastPick); //ie don't let it pick the same thing 2 times in a row
-  	  lastPick = pick;
-  	  return text[pick];
+      index++;
+      if (index === text.length) index = 0;
+  	  return text[index];
   	}
+
+
+
+    function shuffle(text) {
+      var output = [];
+      while (text.length > 0) {
+        var pick = Math.floor(Math.random() * text.length);
+        output.push(text[pick]);
+        text.splice(pick, 1);
+      }
+      return output;
+    }
 
   }
   
   
+
 
 })();
